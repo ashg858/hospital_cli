@@ -9,10 +9,8 @@ class Hospital
       self.send("#{k}=", v)
       #x = "@#{k.to_s} = #{v}"
     end
-    
     create_procedure(self.procedure)
     @@all << self
-
   end
 
   def create_procedure(procedure_arr)

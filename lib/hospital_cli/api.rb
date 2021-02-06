@@ -1,5 +1,5 @@
 class Api
-    attr_accessor :url
+    attr_accessor :url, :name, :procedure_name
   
     def initialize(url)
       @url = "https://www.houstonmethodist.org/imaging-radiology/services/"

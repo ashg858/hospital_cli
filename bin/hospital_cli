@@ -6,7 +6,7 @@ require "hospital_cli"
 #api = Api.new("https://www.houstonmethodist.org/imaging-radiology/services/")
 
 #api.search_imaging_by_name("imaging")
-
-cli = CGI.new
+#include CGI::Hospital
+cli = CLI.new
 #binding.pry
 cli = cli.run
