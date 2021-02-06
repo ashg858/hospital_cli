@@ -16,11 +16,12 @@ class Hospital
   end
 
   def create_procedure(procedure_arr)
+    puts "One moment please..."
     api = Api.new
     procedure_objs = procedure_arr.map do |procedure_name|
      api.search_procedure_by_name(procedure_name)
     end
-    procedure = procedure_objs
+    self.procedure = procedure_objs
   end
 
   def save

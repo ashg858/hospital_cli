@@ -7,5 +7,6 @@ require "hospital_cli"
 
 #api.search_imaging_by_name("imaging")
 
-cli = Cli.new
-cli.run
+cli = CGI.new
+#binding.pry
+cli = cli.run
