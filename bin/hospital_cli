@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "hospital_cli"
+
+#api = Api.new("https://www.houstonmethodist.org/imaging-radiology/services/")
+
+#api.search_imaging_by_name("imaging")
+
+cli = Cli.new
+cli.run
