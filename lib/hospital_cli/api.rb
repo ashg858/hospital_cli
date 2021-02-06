@@ -5,10 +5,10 @@ class Api
       @url = "https://www.houstonmethodist.org/imaging-radiology/services/"
     end
   
-    def search_imaging_by_name(name)
-      req_url="#{url}/imaging/#{name}"
+    def search_radiology_by_name(name)
+      req_url="#{url}/radiology/#{name}"
       data = HTTParty.get(req_url)
-      #imaging_hash = {
+      #radiology_hash = {
         #procedure: data["procedure"],
         #machine: data["name"],
         #doctor: data["doctors"].first["doctors"]["name"],
@@ -16,13 +16,13 @@ class Api
         #body_part: data["body_parts"].map {hash| hash["body_part"]["name"]}
       #}
   
-      imaging = Hospital.new(imaging_hash)
+      radiology = Hospital.new(radiology_hash)
       #binding.pry
-      #puts imaging.machine
+      #puts radiology.machine
     end
 
     def search_procedure_by_name(procedure_name)
-      req_url="#{url}/imaging/#{procedure_name}"
+      req_url="#{url}/radiology/#{procedure_name}"
       data = HTTParty.get(req_url)
       hash = {
         noninvasive: data["noninvasive"],
@@ -32,7 +32,8 @@ class Api
       puts "Procedure labeled"
     end
   end
+end
 
   #api = Api.new("https://www.houstonmethodist.org/imaging-radiology/services/")
 
-  #api.search_imaging_by_name("Cardiovascular Radiology")
+  #api.search_radiology_by_name("Cardiovascular Radiology")

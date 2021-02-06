@@ -40,5 +40,5 @@ class Hospital
   def machine=(machine)
     @machine = machine
   end
-  binding.pry
+  #binding.pry
 end
