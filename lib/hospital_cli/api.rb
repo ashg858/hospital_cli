@@ -18,7 +18,18 @@ class Api
   
       imaging = Hospital.new(imaging_hash)
       #binding.pry
-      puts imaging.machine
+      #puts imaging.machine
+    end
+
+    def search_procedure_by_name(procedure_name)
+      req_url="#{url}/imaging/#{procedure_name}"
+      data = HTTParty.get(req_url)
+      hash = {
+        noninvasive: data["noninvasive"],
+        invasive: data["invasive"]
+      }
+      procedure = Procedure.new(hash)
+      puts "Procedure labeled"
     end
   end
 
