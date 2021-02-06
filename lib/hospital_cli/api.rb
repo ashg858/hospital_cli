@@ -8,13 +8,13 @@ class Api
     def search_imaging_by_name(name)
       req_url="#{url}/imaging/#{name}"
       data = HTTParty.get(req_url)
-      imaging_hash = {
-        procedure: data["procedure"],
-        machine: data["name"],
-        doctor: data["doctors"].first["doctors"]["name"],
-        iodine: data["iodines"].first["iodine"]["name"],
-        body_part: data["body_parts"].map {hash| hash["body_part"]["name"]}
-      }
+      #imaging_hash = {
+        #procedure: data["procedure"],
+        #machine: data["name"],
+        #doctor: data["doctors"].first["doctors"]["name"],
+        #iodine: data["iodines"].first["iodine"]["name"],
+        #body_part: data["body_parts"].map {hash| hash["body_part"]["name"]}
+      #}
   
       imaging = Hospital.new(imaging_hash)
       #binding.pry
