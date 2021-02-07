@@ -2,7 +2,6 @@
 #HOSPITAL_URL = "https://www.houstonmethodist.org/imaging-radiology/services/"
 
 class CLI
-  #include Api::Hospital
 
     def run
       radiology_api = Api.new()
@@ -12,8 +11,8 @@ class CLI
         input = gets.strip.downcase
         #if input ≠ nil && input ≠ "exit" && input ≠ "procedure"
             #radiology = radiology_api.search_radiology_by_name(input)
-          end
-        #elsif input = "procedure"
+      end
+        #else input = "procedure"
           #api.search_procedure_by_name(input)
         end
         puts "Greetings!"

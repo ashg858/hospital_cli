@@ -1,6 +1,25 @@
 class Api
-    attr_accessor :url
+    attr_accessor :url, :website_url
+
+    def website_url
+      @website_url ||= doc.css("a.website").attr('href').value
+    end
+
+    def self.index(r)
+      self.new(
+        r.css("h2").text,
+        "https://www.houstonmethodist.org/imaging-radiology/services/#{r.attribute("href").text}",
+        r.css("p")[1].text,
+        r.css(".position").text
+      )
+    end
   
+    def initialize(website_url=nil, url=nil)
+      @website_url = website_url
+      @url = url
+      @@all << self
+    end
+
     def initialize()
       @url = "https://www.houstonmethodist.org/imaging-radiology/services/"
     end
