@@ -5,7 +5,6 @@ class CLI
   #include Api::Hospital
 
     def run
-      puts "Greetings!"
       radiology_api = Api.new()
       input = nil
       while input ≠ "exit"
@@ -17,7 +16,7 @@ class CLI
         #elsif input = "procedure"
           #api.search_procedure_by_name(input)
         end
-        puts "Goodbye!"
+        puts "Greetings!"
     end
       
       #imaging_api.search_procedure_by_name("noninvasive")

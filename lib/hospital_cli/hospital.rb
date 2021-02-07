@@ -7,10 +7,9 @@ class Hospital
   def initialize(hash)
     hash.each do |k, v|
       self.send("#{k}=", v)
-      #x = "@#{k.to_s} = #{v}"
     end
     create_procedure(self.procedure)
-    @@all << self
+    self.save
   end
 
   def create_procedure(procedure_arr)
